@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Welcome</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div th:include="navigation/base_navigation">
+</div>
+
+<div class="container" style="margin-left: 20px">
+    <form action="" method="post">
+        <div class="row form-group">
+            <label for="email" class="col-sm-2" style="padding: 0">
+                Email
+            </label>
+            <div class="col-sm-4">
+                <input class="form-control" id="email" name="email"
+                       placeholder="Email"/>
+            </div>
+        </div>
+
+        <div class="row form-group">
+            <label for="password" class="col-sm-2" style="padding: 0">
+                Password
+            </label>
+            <div class="col-sm-4">
+                <input type="password" class="form-control" id="password" name="password"
+                       placeholder="Password"/>
+            </div>
+        </div>
+
+        <div class="row">
+            <button class="btn btn-primary">
+                Login
+            </button>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>
