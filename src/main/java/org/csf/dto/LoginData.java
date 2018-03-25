@@ -1,11 +1,13 @@
 package org.csf.dto;
 
+import java.io.Serializable;
+
 /**
  * @author Andrew Boytsov
  * @date 25.03.2018
  */
 
-public class LoginData {
+public class LoginData implements Serializable {
 
     private String login;
     private String password;

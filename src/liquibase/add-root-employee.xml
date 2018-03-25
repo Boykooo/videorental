@@ -1,0 +1,14 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.0.xsd">
+
+    <changeSet id="init-db" author="aboytsov">
+        <insert tableName="employee">
+            <column name="login">root</column>
+            <column name="password">4813494d137e1631bba301d5acab6e7bb7aa74ce1185d456565ef51d737677b2</column> <!--root-->
+            <column name="token">a8fe8db0-f9c6-480b-bd2f-64199c8164c1</column>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>

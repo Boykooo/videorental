@@ -14,4 +14,6 @@ public interface EmployeeRepository extends JpaRepository<Employee, Long> {
 
     Employee findByLoginAndPassword(String login, String password);
 
+    Employee findByToken(String token);
+
 }

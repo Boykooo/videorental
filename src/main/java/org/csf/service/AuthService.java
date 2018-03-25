@@ -3,8 +3,10 @@ package org.csf.service;
 import org.csf.domain.Employee;
 import org.csf.dto.LoginData;
 import org.csf.repository.EmployeeRepository;
+import org.csf.utils.HashHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 
 /**
  * @author Andrew Boytsov
@@ -21,6 +23,10 @@ public class AuthService {
         if (loginData == null || loginData.isEmpty()) {
             return null;
         }
-        return employeeRepository.findByLoginAndPassword(loginData.getLogin(), loginData.getPassword());
+        return employeeRepository.findByLoginAndPassword(loginData.getLogin(), HashHelper.encodeSha256(loginData.getPassword()));
+    }
+
+    public Employee getEmployeeByToken(String token) {
+        return !StringUtils.isEmpty(token) ? employeeRepository.findByToken(token) : null;
     }
 }

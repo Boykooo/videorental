@@ -6,4 +6,8 @@
          http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
 
     <include file="init_db.xml" relativeToChangelogFile="true"/>
+    <include file="add-token-to-employee.xml" relativeToChangelogFile="true"/>
+    <include file="add-more-info-to-cassette-table.xml" relativeToChangelogFile="true"/>
+    <include file="add-root-employee.xml" relativeToChangelogFile="true"/>
+
 </databaseChangeLog>

@@ -14,14 +14,14 @@
 </div>
 
 <div class="container" style="margin-left: 20px">
-    <form action="" method="post">
+    <form action="#" th:action="@{/auth/login}" method="POST">
         <div class="row form-group">
-            <label for="email" class="col-sm-2" style="padding: 0">
+            <label for="login" class="col-sm-2" style="padding: 0">
                 Email
             </label>
             <div class="col-sm-4">
-                <input class="form-control" id="email" name="email"
-                       placeholder="Email"/>
+                <input class="form-control" id="login" th:field="*{loginData.login}"
+                       placeholder="Login"/>
             </div>
         </div>
 
@@ -30,7 +30,7 @@
                 Password
             </label>
             <div class="col-sm-4">
-                <input type="password" class="form-control" id="password" name="password"
+                <input type="password" class="form-control" id="password" th:field="*{loginData.password}"
                        placeholder="Password"/>
             </div>
         </div>

@@ -22,4 +22,12 @@ public class CassetteService {
         return cassetteRepository.findAll();
     }
 
+    public void createOrUpdate(Cassette cassette) {
+        cassetteRepository.save(cassette);
+    }
+
+    public void delete(Long id) {
+        cassetteRepository.delete(id);
+    }
+
 }

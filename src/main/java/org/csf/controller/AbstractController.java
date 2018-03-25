@@ -1,5 +1,7 @@
 package org.csf.controller;
 
+import org.csf.dto.LoginData;
+import org.springframework.ui.Model;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.HashMap;
@@ -25,7 +27,8 @@ public abstract class AbstractController {
         return  new ModelAndView("exception", model);
     }
 
-    protected String toLoginPage() {
+    protected String toLoginPage(Model model) {
+        model.addAttribute("loginData", new LoginData());
         return "admin/login";
     }
 

@@ -1,13 +1,6 @@
 package org.csf.domain;
 
-import org.springframework.format.annotation.DateTimeFormat;
-
 import javax.persistence.*;
-import java.time.Instant;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.util.Date;
-import java.util.List;
 
 /**
  * @author Andrew Boytsov
@@ -15,8 +8,8 @@ import java.util.List;
  */
 
 @Entity
-@Table(name = "cassette")
-public class Cassette {
+@Table(name = "client")
+public class Client {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -31,14 +24,7 @@ public class Cassette {
     @Column(name = "cost")
     private Double cost;
 
-    @Column(name = "release_date")
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private Date releaseDate;
-
-    @Column(name = "director")
-    private String director;
-
-    public Cassette() {
+    public Client() {
     }
 
     public Long getId() {
@@ -71,21 +57,5 @@ public class Cassette {
 
     public void setCost(Double cost) {
         this.cost = cost;
-    }
-
-    public Date getReleaseDate() {
-        return releaseDate;
-    }
-
-    public void setReleaseDate(Date releaseDate) {
-        this.releaseDate = releaseDate;
-    }
-
-    public String getDirector() {
-        return director;
-    }
-
-    public void setDirector(String director) {
-        this.director = director;
     }
 }

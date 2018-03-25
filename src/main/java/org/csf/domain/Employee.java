@@ -1,9 +1,6 @@
 package org.csf.domain;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 /**
  * @author Andrew Boytsov
@@ -15,6 +12,7 @@ import javax.persistence.Table;
 public class Employee {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(name = "login")
@@ -22,6 +20,9 @@ public class Employee {
 
     @Column(name = "password")
     private String password;
+
+    @Column(name = "token")
+    private String token;
 
     public Employee() {
     }
@@ -48,5 +49,13 @@ public class Employee {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
     }
 }
