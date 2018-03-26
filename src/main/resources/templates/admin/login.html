@@ -3,44 +3,62 @@
 <head>
     <title>Welcome</title>
     <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" th:href="@{/css/common.css}"/>
 </head>
 <body>
 
 <div th:include="navigation/base_navigation">
 </div>
 
-<div class="container" style="margin-left: 20px">
-    <form action="#" th:action="@{/auth/login}" method="POST">
-        <div class="row form-group">
-            <label for="login" class="col-sm-2" style="padding: 0">
-                Email
-            </label>
-            <div class="col-sm-4">
-                <input class="form-control" id="login" th:field="*{loginData.login}"
-                       placeholder="Login"/>
-            </div>
-        </div>
+<div class="container col-md-12">
+    <div class="row" style="margin-top: 30px">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <form action="#" th:action="@{/auth/login}" method="POST">
+                <div class="row form-group" style="text-align: center; ">
+                    <div class="col-sm-3"></div>
+                    <label for="login" class="col-sm-2" style="padding: 0">
+                        Email
+                    </label>
+                    <div class="col-sm-4">
+                        <input class="form-control" id="login" th:field="*{loginData.login}"
+                               placeholder="Login"/>
+                    </div>
+                    <div class="col-sm-3"></div>
+                </div>
+                <div class="row form-group" style="text-align: center; ">
+                    <div class="col-sm-3"></div>
 
-        <div class="row form-group">
-            <label for="password" class="col-sm-2" style="padding: 0">
-                Password
-            </label>
-            <div class="col-sm-4">
-                <input type="password" class="form-control" id="password" th:field="*{loginData.password}"
-                       placeholder="Password"/>
-            </div>
-        </div>
+                    <label for="password" class="col-sm-2" style="padding: 0">
+                        Password
+                    </label>
+                    <div class="col-sm-4">
+                        <input type="password" class="form-control" id="password"
+                               th:field="*{loginData.password}"
+                               placeholder="Password"/>
+                    </div>
+                    <div class="col-sm-3"></div>
 
-        <div class="row">
-            <button class="btn btn-primary">
-                Login
-            </button>
+                </div>
+                <div class="row form-group">
+                    <div class="col-md-5"></div>
+                    <div class="col-md-2" style="text-align: center">
+                        <button class="btn btn-primary" style="font-size: 16px">
+                            Login
+                        </button>
+                    </div>
+                    <div class="col-md-5"></div>
+                </div>
+            </form>
         </div>
-    </form>
+        <div class="col-md-2"></div>
+    </div>
 </div>
 
 </body>
