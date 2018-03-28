@@ -1,15 +1,3 @@
-<!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <title>Cassette</title>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-</head>
-<body>
-
 <div class="modal fade" id="newCassette" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -23,10 +11,10 @@
             </div>
             <div class="modal-body">
                 <div class="row">
-                    <div class="row">
-                        <div class="col-md-12" style="padding-right: 30px;">
-                            <form action="#" th:action="@{/admin/cassette} " method="POST">
-                                <div class="form-group col-md-12">
+                    <div class="col-md-12" style="padding-right: 30px;">
+                        <form action="#" th:action="@{/admin/cassette} " method="POST">
+                            <div class="form-group">
+                                <div class="row col-md-12">
                                     <label class="col-sm-2 control-label">
                                         Название
                                     </label>
@@ -34,58 +22,67 @@
                                         <input type="text" class="form-control" th:field="*{cassette.name}" placeholder="Название"/>
                                     </div>
                                 </div>
+                            </div>
 
-                                <div class="form-group col-md-12">
+                            <div class="form-group">
+                                <div class="row col-md-12">
                                     <label class="col-sm-2 control-label">
                                         Описание
                                     </label>
                                     <div class="col-sm-4">
-                                         <textarea th:field="*{cassette.description}" id="description" cols="33" rows="6"
-                                                   placeholder="Описание"></textarea>
+                     <textarea th:field="*{cassette.description}" id="description" cols="33"
+                               rows="6"
+                               placeholder="Описание"></textarea>
                                     </div>
                                 </div>
+                            </div>
 
-                                <div class="form-group col-md-12">
+                            <div class="form-group">
+                                <div class="row col-md-12">
                                     <label class="col-sm-2 control-label">
                                         Дата выхода
                                     </label>
                                     <div class="col-sm-4">
-                                        <input type="text" class="form-control" th:field="*{cassette.releaseDate}" placeholder="ГГ-ММ-ДД"/>
+                                        <input type="text" class="form-control" th:field="*{cassette.releaseDate}"
+                                               placeholder="ГГ-ММ-ДД"/>
                                     </div>
                                 </div>
+                            </div>
 
-                                <div class="form-group col-md-12">
+                            <div class="form-group">
+                                <div class="row col-md-12">
                                     <label class="col-sm-2 control-label">
                                         Режиссер
                                     </label>
                                     <div class="col-sm-4">
-                                        <input type="text" class="form-control" th:field="*{cassette.director}" placeholder="Режиссер"/>
+                                        <input type="text" class="form-control" th:field="*{cassette.director}"
+                                               placeholder="Режиссер"/>
                                     </div>
                                 </div>
+                            </div>
 
-                                <div class="form-group col-md-12">
+                            <div class="form-group">
+                                <div class="row col-md-12">
                                     <label class="col-sm-2 control-label">
                                         Стоимость
                                     </label>
                                     <div class="col-sm-4">
-                                        <input type="text" class="form-control" th:field="*{cassette.cost}" placeholder="Стоимость"/>
+                                        <input type="text" class="form-control" th:field="*{cassette.cost}"
+                                               placeholder="Стоимость"/>
                                     </div>
                                 </div>
+                            </div>
 
-                                <input type="hidden" name="token" th:value="${token}"/>
-                                <div class="form-group col-md-12">
-                                    <button class="btn btn-primary edit-button">
-                                        Send
-                                    </button>
-                                </div>
-                            </form>
-                        </div>
+                            <input type="hidden" name="token" th:value="${token}"/>
+                            <div class="form-group col-md-12">
+                                <button class="btn btn-primary edit-button">
+                                    Создать кассету
+                                </button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
-</body>
-</html>

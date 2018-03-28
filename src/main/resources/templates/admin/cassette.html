@@ -8,52 +8,60 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="/css/common.css"/>
 </head>
 <body>
 
-<div th:include="navigation/base_navigation">
+<div th:include="navigation/admin_navigation">
 </div>
 
 <div th:include="dialogs/new_cassette">
 </div>
 
-<div class="col-md-2">
+<div class="container-fluid" style="margin-top: 30px">
+    <div class="row">
+        <div class="col-md-2">
+        </div>
+
+        <div class="col-md-8">
+            <button class="btn btn-primary" data-toggle="modal" data-target="#newCassette">
+                Добавить кассету
+            </button>
+            <h2>Список кассет</h2>
+            <table class="table table-striped table-bordered">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Название</th>
+                    <th>Описание</th>
+                    <th>Дата выхода</th>
+                    <th>Режиссер</th>
+                    <th>Стоимость</th>
+                    <th></th>
+                </tr>
+                </thead>
+                <th:block th:each="cassette : ${cassettes}">
+                    <tr class="th-limit-words" style="overflow: hidden">
+                        <td th:text="${cassette.id}"></td>
+                        <td th:text="${cassette.name}"></td>
+                        <td th:text="${cassette.description}"></td>
+                        <td th:text="${cassette.releaseDate}"></td>
+                        <td th:text="${cassette.director}"></td>
+                        <td th:text="${cassette.cost}"></td>
+                        <td>
+                            <a class="btn btn-primary" role="button"
+                               th:href="@{'/admin/cassette/' + ${cassette.id} + '?token=' + ${token}}">
+                                Edit
+                            </a>
+                        </td>
+                    </tr>
+                </th:block>
+            </table>
+        </div>
+    </div>
 </div>
 
-<div class="col-md-8">
-    <button class="btn btn-primary" data-toggle="modal" data-target="#newCassette">
-        Добавить кассету
-    </button>
-    <h2>Список кассет</h2>
-    <table class="table table-striped table-bordered">
-        <thead>
-        <tr>
-            <th>ID</th>
-            <th>Название</th>
-            <th>Описание</th>
-            <th>Дата выхода</th>
-            <th>Режиссер</th>
-            <th>Стоимость</th>
-            <th></th>
-        </tr>
-        </thead>
-        <th:block th:each="cassette : ${cassettes}">
-            <tr class="th-limit-words" style="overflow: hidden">
-                <td th:text="${cassette.id}"></td>
-                <td th:text="${cassette.name}"></td>
-                <td th:text="${cassette.description}"></td>
-                <td th:text="${cassette.releaseDate}"></td>
-                <td th:text="${cassette.director}"></td>
-                <td th:text="${cassette.cost}"></td>
-                <td>
-                    <button class="btn btn-primary">
-                        Edit
-                    </button>
-                </td>
-            </tr>
-        </th:block>
-    </table>
-</div>
 
 <div class="col-md-2">
 </div>

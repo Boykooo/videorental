@@ -30,4 +30,7 @@ public class CassetteService {
         cassetteRepository.delete(id);
     }
 
+    public Cassette getCassetteById(Long id) {
+        return cassetteRepository.findOne(id);
+    }
 }

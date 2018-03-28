@@ -68,4 +68,29 @@ public class CassetteController extends AbstractController {
         return getAdminCassettePage(token, model);
     }
 
+    @GetMapping("/admin/cassette/{id}")
+    public String getCassetteEditPage(@RequestParam(value = "token", required = false) String token,
+                                      @PathVariable("id") Long id,
+                                      Model model) {
+        if (Objects.isNull(authService.getEmployeeByToken(token))) {
+            return toLoginPage(model);
+        }
+
+        model.addAttribute("token", token);
+        model.addAttribute("cassette", cassetteService.getCassetteById(id));
+        return "admin/edit_cassette";
+    }
+
+    @PutMapping("/admin/cassette")
+    public String updateCassette(@RequestParam(value = "token", required = false) String token,
+                                 Cassette cassette,
+                                 Model model) {
+        if (Objects.isNull(authService.getEmployeeByToken(token))) {
+            return toLoginPage(model);
+        }
+
+        cassetteService.createOrUpdate(cassette);
+        return getAdminCassettePage(token, model);
+    }
+
 }
