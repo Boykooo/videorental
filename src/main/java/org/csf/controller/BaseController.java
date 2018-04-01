@@ -10,12 +10,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 
 @Controller
-@RequestMapping("/")
 public class BaseController extends AbstractController {
 
-    @GetMapping
+    @GetMapping("/")
     public String welcome() {
         return toWelcomePage();
     }
 
+    @GetMapping("/rental_rules")
+    public String rentalRules() {
+        return "rental_rules";
+    }
 }

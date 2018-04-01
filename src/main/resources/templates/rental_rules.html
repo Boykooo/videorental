@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Список кассет</title>
+    <meta charset="utf-8"/>
+
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div th:include="navigation/base_navigation">
+</div>
+
+<div class="row" style="margin-top: 50px">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+        <h1>Правила проката</h1>
+        <ol style="font-size: 18px">
+            <li>Клиент вносит денежный залог за DVD и согласует срок проката с сотрудником.</li>
+            <li>DVD должны быть возвращены в установленный день, за 30 минут до закрытия пункта . За просроченный день
+                возврата изымается штраф в сумме равной стоимости проката в сутки.
+            </li>
+            <li>При не возврате DVD в течение четырех дней DVD считается выкупленной, а внесенный залог не
+                возвращается.
+            </li>
+            <li>Поцарапанный DVD, а также с испорченным фирменным стикером обратно не принимается, залог не
+                возвращается.
+            </li>
+            <li>Видеофильмы выдаются с учетом возрастных ограничений, установленных действующим законодательством РБ.
+            </li>
+            <li>Клиент взяв DVD на прокат подтверждает свое согласие с вышеизложенными правилами.</li>
+        </ol>
+    </div>
+    <div class="col-md-2"></div>
+</div>
+
+</body>
+</html>
