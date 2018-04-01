@@ -33,4 +33,5 @@ public class CassetteService {
     public Cassette getCassetteById(Long id) {
         return cassetteRepository.findOne(id);
     }
+
 }

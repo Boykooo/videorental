@@ -3,10 +3,42 @@
 <head>
     <title>Welcome</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style>
+        #map {
+            height: 400px;
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
 <div th:include="navigation/base_navigation">
 </div>
+
+<div class="row" style="margin-top: 30px">
+    <div class="col-md-3"></div>
+    <div class="col-md-6" style="text-align: center">
+        <h3>Наше местоположение</h3>
+        <div id="map"></div>
+    </div>
+    <div class="col-md-3"></div>
+</div>
+
+<script>
+    function initMap() {
+        var point = {lat:  51.656600, lng: 39.206105};
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 16,
+            center: point
+        });
+        var marker = new google.maps.Marker({
+            position: point,
+            map: map
+        });
+    }
+</script>
+<script async="async"
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBufZxerrqJpX76jEuMotJTqYsxyHsmKtY&amp;callback=initMap">
+</script>
 
 </body>
 </html>
