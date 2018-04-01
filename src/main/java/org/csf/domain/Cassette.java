@@ -38,6 +38,9 @@ public class Cassette {
     @Column(name = "director")
     private String director;
 
+    @Column(name = "genre")
+    private String genre;
+
     public Cassette() {
     }
 
@@ -87,5 +90,13 @@ public class Cassette {
 
     public void setDirector(String director) {
         this.director = director;
+    }
+
+    public String getGenre() {
+        return genre;
+    }
+
+    public void setGenre(String genre) {
+        this.genre = genre;
     }
 }

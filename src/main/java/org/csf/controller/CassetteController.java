@@ -31,6 +31,13 @@ public class CassetteController extends AbstractController {
         return "cassettes";
     }
 
+    @GetMapping("/cassette/{id}")
+    public String getCassettes(@PathVariable("id") Long id,
+                               Model model) {
+        model.addAttribute("cassette", cassetteService.getCassetteById(id));
+        return "cassette_info";
+    }
+
     @GetMapping("/admin/cassette")
     public String getAdminCassettePage(@RequestParam(value = "token", required = false) String token,
                                        Model model) {

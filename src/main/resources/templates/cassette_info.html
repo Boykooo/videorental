@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Список кассет</title>
+    <meta charset="utf-8"/>
+
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div th:include="navigation/base_navigation">
+</div>
+
+<div class="container" style="margin-top: 40px">
+    <div class="row">
+        <div class="col-md-2">
+        </div>
+        <div class="col-md-8">
+            <div style="font-size: 18px; margin-top: 30px">
+                <h3>Название</h3>
+                <div th:text="${cassette.name}"></div>
+                <h3>Жанр</h3>
+                <div th:text="${cassette.genre}"></div>
+                <h3>Описание</h3>
+                <div th:text="${cassette.description}"></div>
+                <h3>Дата выхода</h3>
+                <div th:text="${cassette.releaseDate}"></div>
+                <h3>Режиссер</h3>
+                <div th:text="${cassette.director}"></div>
+                <h3>Стоимость</h3>
+                <div th:text="${cassette.cost}"></div>
+            </div>
+        </div>
+        <div class="col-md-2">
+        </div>
+    </div>
+</div>
+</body>
+</html>

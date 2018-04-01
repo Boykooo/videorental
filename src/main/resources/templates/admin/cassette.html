@@ -34,6 +34,7 @@
                 <tr>
                     <th>ID</th>
                     <th>Название</th>
+                    <th>Жанр</th>
                     <th>Описание</th>
                     <th>Дата выхода</th>
                     <th>Режиссер</th>
@@ -45,6 +46,7 @@
                     <tr class="th-limit-words" style="overflow: hidden">
                         <td th:text="${cassette.id}"></td>
                         <td th:text="${cassette.name}"></td>
+                        <td th:text="${cassette.genre}"></td>
                         <td th:text="${cassette.description}"></td>
                         <td th:text="${cassette.releaseDate}"></td>
                         <td th:text="${cassette.director}"></td>
@@ -52,7 +54,7 @@
                         <td>
                             <a class="btn btn-primary" role="button"
                                th:href="@{'/admin/cassette/' + ${cassette.id} + '?token=' + ${token}}">
-                                Edit
+                                Редактировать
                             </a>
                         </td>
                     </tr>

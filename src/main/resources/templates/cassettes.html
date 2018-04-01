@@ -18,7 +18,8 @@
     <div class="col-md-2"></div>
     <div class="col-md-8" style="text-align: center">
         <h1>Наша рекомендация</h1>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/aIDMzO5NcCo" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="allowfullscreen"></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/aIDMzO5NcCo" frameborder="0"
+                allow="autoplay; encrypted-media" allowfullscreen="allowfullscreen"></iframe>
     </div>
     <div class="col-md-2"></div>
 </div>
@@ -34,19 +35,26 @@
                 <thead>
                 <tr>
                     <th>Название</th>
-                    <th>Описание</th>
+                    <th>Жанр</th>
                     <th>Дата выхода</th>
                     <th>Режиссер</th>
                     <th>Стоимость залога</th>
+                    <th></th>
                 </tr>
                 </thead>
                 <th:block th:each="cassette : ${cassettes}">
                     <tr class="th-limit-words" style="overflow: hidden">
                         <td th:text="${cassette.name}"></td>
-                        <td th:text="${cassette.description}"></td>
+                        <td th:text="${cassette.genre}"></td>
                         <td th:text="${cassette.releaseDate}"></td>
                         <td th:text="${cassette.director}"></td>
                         <td th:text="${cassette.cost}"></td>
+                        <td>
+                            <a class="btn btn-primary" role="button"
+                               th:href="@{'/cassette/' + ${cassette.id}}">
+                                Подробнее
+                            </a>
+                        </td>
                     </tr>
                 </th:block>
             </table>
@@ -58,3 +66,9 @@
 </div>
 </body>
 </html>
+
+<!--<td th:text="${cassette.description}" style="max-width: 300px;-->
+                                                                <!--overflow: hidden;-->
+                                                                <!--text-overflow: ellipsis;-->
+                                                                <!--white-space: nowrap;">-->
+<!--</td>-->
