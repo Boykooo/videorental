@@ -41,6 +41,9 @@ public class Cassette {
     @Column(name = "genre")
     private String genre;
 
+    @Column(name = "poster")
+    private String poster;
+
     public Cassette() {
     }
 
@@ -98,5 +101,13 @@ public class Cassette {
 
     public void setGenre(String genre) {
         this.genre = genre;
+    }
+
+    public String getPoster() {
+        return poster;
+    }
+
+    public void setPoster(String poster) {
+        this.poster = poster;
     }
 }

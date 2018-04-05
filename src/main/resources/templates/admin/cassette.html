@@ -10,6 +10,16 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
     <link rel="stylesheet" type="text/css" href="/css/common.css"/>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-117018295-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-117018295-1');
+    </script>
 </head>
 <body>
 
@@ -40,6 +50,7 @@
                     <th>Режиссер</th>
                     <th>Стоимость</th>
                     <th></th>
+                    <th></th>
                 </tr>
                 </thead>
                 <th:block th:each="cassette : ${cassettes}">
@@ -56,6 +67,13 @@
                                th:href="@{'/admin/cassette/' + ${cassette.id} + '?token=' + ${token}}">
                                 Редактировать
                             </a>
+                        </td>
+                        <td>
+                            <form action="#" th:action="@{'/admin/cassette/' + ${cassette.id} + '?token=' + ${token}}" th:method="DELETE">
+                                <button class="btn btn-danger" role="button" type="submit">
+                                    Удалить
+                                </button>
+                            </form>
                         </td>
                     </tr>
                 </th:block>

@@ -8,6 +8,17 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-117018295-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-117018295-1');
+    </script>
+
 </head>
 <body>
 
@@ -15,26 +26,32 @@
 </div>
 
 <div class="container" style="margin-top: 40px">
-    <div class="row">
-        <div class="col-md-2">
+    <div class="row" >
+        <div class="col-md-12" style="text-align: center">
+            <h1 th:text="${cassette.name}"></h1>
         </div>
-        <div class="col-md-8">
-            <div style="font-size: 18px; margin-top: 30px">
-                <h3>Название</h3>
-                <div th:text="${cassette.name}"></div>
-                <h3>Жанр</h3>
-                <div th:text="${cassette.genre}"></div>
-                <h3>Описание</h3>
-                <div th:text="${cassette.description}"></div>
-                <h3>Дата выхода</h3>
-                <div th:text="${cassette.releaseDate}"></div>
-                <h3>Режиссер</h3>
-                <div th:text="${cassette.director}"></div>
-                <h3>Стоимость</h3>
-                <div th:text="${cassette.cost}"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-5" style="margin-top: 30px">
+            <img th:src="${cassette.poster}" alt="Poster not found" width="350" height="480"/>
+        </div>
+        <div class="col-md-6">
+            <div style="font-size: 18px; margin-top: 30px;">
+                <div style="margin-top: 30px">
+                    <h4>Жанр</h4>
+                    <div th:text="${cassette.genre}"></div>
+                    <h4>Описание</h4>
+                    <div th:text="${cassette.description}"></div>
+                    <h4>Дата выхода</h4>
+                    <div th:text="${cassette.releaseDate}"></div>
+                    <h4>Режиссер</h4>
+                    <div th:text="${cassette.director}"></div>
+                    <h4>Стоимость</h4>
+                    <div th:text="${cassette.cost}"></div>
+                </div>
             </div>
         </div>
-        <div class="col-md-2">
+        <div class="col-md-1">
         </div>
     </div>
 </div>
