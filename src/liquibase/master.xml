@@ -12,5 +12,6 @@
     <include file="modify-cassette-table.xml" relativeToChangelogFile="true"/>
     <include file="add-genre-to-cassette.xml" relativeToChangelogFile="true"/>
     <include file="add-poster-to-cassette.xml" relativeToChangelogFile="true"/>
+    <include file="modify-client-table.xml" relativeToChangelogFile="true"/>
 
 </databaseChangeLog>

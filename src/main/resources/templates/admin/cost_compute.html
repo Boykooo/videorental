@@ -1,0 +1,90 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Расчет стоимости</title>
+    <meta charset="utf-8"/>
+
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="/css/common.css"/>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-117018295-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'UA-117018295-1');
+    </script>
+</head>
+<body>
+
+<div th:include="navigation/admin_navigation">
+</div>
+
+<div class="container-fluid">
+    <div class="row" style="margin-top: 30px">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <form action="#" th:action="@{'/admin/rental/cost_compute'} " th:method="POST">
+                <h2>Расчет стоимости</h2>
+                <div style="margin-top: 20px; font-size: 18px">
+                    <div class="form-group">
+                        <div class="row col-md-12">
+                            <label class="col-sm-2 control-label">
+                                Выбирете фильм
+                            </label>
+                            <div class="col-sm-4">
+                                <select class="form-control" th:field="${costComputeDto.cassetteId}"  id="dropOperator">
+                                    <option th:each="cassette : ${cassettes}" th:value="${cassette.id}" th:text="${cassette.name}"></option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row col-md-12">
+                            <label class="col-sm-2 control-label">
+                                Номер телефона
+                            </label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" th:field="*{costComputeDto.phoneNumber}"
+                                       placeholder="Номер телефона"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row col-md-12">
+                            <label class="col-sm-2 control-label">
+                                Дата возврата
+                            </label>
+                            <div class="col-sm-4">
+                                <input type="date" class="form-control" th:field="*{costComputeDto.endDate}"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <input type="hidden" name="token" th:value="${token}"/>
+                <button th:type="submit" class="btn btn-primary">
+                    Рассчитать
+                </button>
+            </form>
+            <div th:if="${cost} != null" style="margin-top: 50px; font-size: 20px">
+                <h2>Стоимость</h2>
+                <div th:text="${cost}"></div>
+            </div>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+</div>
+
+</body>
+</html>

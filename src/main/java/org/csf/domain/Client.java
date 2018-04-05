@@ -15,14 +15,14 @@ public class Client {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "phone_number")
+    private String phoneNumber;
+
     @Column(name = "name")
     private String name;
 
-    @Column(name = "description")
-    private String description;
-
-    @Column(name = "cost")
-    private Double cost;
+    @Column(name = "vip")
+    private Boolean vip;
 
     public Client() {
     }
@@ -35,6 +35,14 @@ public class Client {
         this.id = id;
     }
 
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
     public String getName() {
         return name;
     }
@@ -43,19 +51,15 @@ public class Client {
         this.name = name;
     }
 
-    public String getDescription() {
-        return description;
+    public Boolean getVip() {
+        return vip;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setVip(Boolean vip) {
+        this.vip = vip;
     }
 
-    public Double getCost() {
-        return cost;
-    }
-
-    public void setCost(Double cost) {
-        this.cost = cost;
+    public double getDiscountCost(double cost, double discount) {
+        return vip ? cost * discount : cost;
     }
 }

@@ -21,4 +21,5 @@ public class BaseController extends AbstractController {
     public String rentalRules() {
         return "rental_rules";
     }
+
 }
