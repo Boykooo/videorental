@@ -17,7 +17,13 @@
         </div>
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link" href="/cassette">Список кассет</a>
+                <a class="nav-link" th:href="@{'/admin/cassette?token=' + ${token}}">Кассеты</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{'/admin/cassette?token=' + ${token}}">Расчет стоимости</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{'/admin/cassette?token=' + ${token}}">Прокаты</a>
             </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
